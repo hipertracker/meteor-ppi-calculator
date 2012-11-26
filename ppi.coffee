@@ -2,10 +2,11 @@ Devices = new Meteor.Collection("devices")
 
 if Meteor.isClient
   Meteor.autosubscribe ->
-    Meteor.subscribe 'devices'
+    Meteor.subscribe 'devices', ->
+      Session.set('devicesLoaded', true)
 
-  Template.list.devices =  -> Devices.find({}, sort: {ppi:-1, name:1})
-
+  Template.list.devicesLoaded = -> Session.get('devicesLoaded')
+  
   Template.calculator.width = -> parseInt Session.get('width')
   Template.calculator.height = -> parseInt Session.get('height')
   Template.calculator.diagonal = -> parseInt Session.get('diagonal')
@@ -22,6 +23,9 @@ if Meteor.isClient
     'change #width': -> Session.set 'width', $('#width').val()
     'change #height': -> Session.set 'height', $('#height').val()
     'change #diagonal': -> Session.set 'diagonal', $('#diagonal').val()
+
+  Template.list.devices =  -> 
+    Devices.find({}, sort: {ppi:-1, name:1})
 
 if Meteor.isServer
 
