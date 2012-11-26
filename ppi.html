@@ -1,0 +1,48 @@
+<head>
+  <title>PPI calculator</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>PPI calculator</h1>
+    {{> calculator}}
+    <h3>Examples</h3>
+    {{> list}}
+    <small>Made by <a href="http://zabiello.com/contact">hipertracker</a></small>
+  </div>
+</body>
+
+<template name="calculator"> 
+  <div id="calculator" class="form-inline">
+    <input type="number" id="width" class="input-medium" placeholder="width [pixels]" value="{{width}}">
+    x 
+    <input type="number" id="height" class="input-medium" placeholder="height [pixels]" value="{{height}}">
+    &amp;
+    <input type="number" id="diagonal" class="input-medium" placeholder="diagonal [inch]" value="{{diagonal}}">
+    <button>=</button> 
+    <strong>{{ppi}} PPI</strong>
+  </div>
+</template>  
+
+<template name="list">
+  <table id="list" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Display</th>
+        <th>Diagonal</th>
+        <th>PPI</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each devices}}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{width}}x{{height}}
+        <td>{{diagonal}}"</td>
+        <td>{{ppi}}</td>
+      </tr>  
+      {{/each}}
+    </tbody>
+  </table>
+</template>
