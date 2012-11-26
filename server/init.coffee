@@ -5,7 +5,7 @@ initialDevices = [
   {name:'iPad Mini',     width:1024, height:768,  diagonal:7.9},
   {name:'iPhone 4/4s',   width:960,  height:640,  diagonal:3.5},
   {name:'iPhone 5',      width:1136, height:640,  diagonal:4},
-  {name: 'Nexus 4',      width:1280, height:768, diagonal: 4.7},
+  {name: 'Nexus 4',      width:1280, height:768,  diagonal:4.7},
   # tablets
   {name:'MacBook Air 11"',            width:1366, height:768,  diagonal:11.6},  
   {name:'MacBook Air 13.3"',          width:1440, height:900,  diagonal:13.3},  

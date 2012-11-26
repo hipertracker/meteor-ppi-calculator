@@ -1,10 +1,11 @@
 <head>
-  <title>PPI (pixel density) calculator</title>
+  <title>Display PPI (pixel density) Calculator</title>
 </head>
 
 <body>
   <div class="container">
-    <h1>PPI (pixel density) calculator</h1>
+    <h1>Display PPI (pixel density) Calculator</h1>
+
     {{> calculator}}
 
     <blockquote>
@@ -14,7 +15,6 @@
     </blockquote>
 
     {{> list}}
-
   </div>
 </body>
 
@@ -27,11 +27,17 @@
 
 <template name="calculator"> 
   <div id="calculator" class="form-inline">
-    <input type="number" id="width" class="input-medium" placeholder="width [pixels]" value="{{width}}">
+    <span id="width" class="control-group {{statusWidth}}">
+      <input type="number" class="input-medium" placeholder="width [pixels]" value="{{width}}" autofocus>
+    </span>
     x 
-    <input type="number" id="height" class="input-medium" placeholder="height [pixels]" value="{{height}}">
+    <span id="height" class="control-group {{statusHeight}}">
+      <input type="number" class="input-medium" placeholder="height [pixels]" value="{{height}}">
+    </span>
     &amp;
-    <input type="number" id="diagonal" class="input-medium" placeholder="diagonal [inch]" value="{{diagonal}}">
+    <span id="diagonal" class="control-group {{statusDiagonal}}">
+      <input type="number" class="input-medium" placeholder="diagonal [inch]" value="{{diagonal}}">
+    </span>
     <button>=</button> 
     <strong>{{ppi}} PPI
   </div>
@@ -59,7 +65,9 @@
         {{/each}}
       </tbody>
     </table>
+
     {{> made}}
+
   {{else}}
     <div class="center">
       <img src="img/spinner.gif">
