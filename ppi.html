@@ -1,13 +1,20 @@
 <head>
-  <title>PPI calculator</title>
+  <title>PPI (pixel density) calculator</title>
 </head>
 
 <body>
   <div class="container">
-    <h1>PPI calculator</h1>
+    <h1>PPI (pixel density) calculator</h1>
     {{> calculator}}
-    <h3>Examples</h3>
+
+    <blockquote>
+      &quot;PPI (pixels per inch) is the number of pixels displayed in an image. A digital image is composed of samples that your screen displays in pixels. The PPI is the display resolution not the image resolution. (Adobe Photoshop uses PPI and Corel Photo-Paint uses DPI for image resolution so it's no wonder everyone is confused.)&quot; 
+      <small><a href="http://www.andrewdaceyphotography.com/articles/dpi/">http://www.andrewdaceyphotography.com/articles/dpi/</a></small>
+      See also: <a href="http://en.wikipedia.org/wiki/Pixel_density"><img src="img/wikipedia.png"></a>
+    </blockquote>
+
     {{> list}}
+
     {{> made}}
   </div>
 </body>
@@ -26,7 +33,7 @@
     &amp;
     <input type="number" id="diagonal" class="input-medium" placeholder="diagonal [inch]" value="{{diagonal}}">
     <button>=</button> 
-    <strong>{{ppi}} PPI</strong>
+    <strong>{{ppi}} PPI
   </div>
 </template>  
 
@@ -37,7 +44,7 @@
         <th>Name</th>
         <th>Display</th>
         <th>Diagonal</th>
-        <th>PPI</th>
+        <th>Pixel density</th>
       </tr>
     </thead>
     <tbody>
