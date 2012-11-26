@@ -30,7 +30,7 @@ if Meteor.isClient
   Template.calculator.events
     'change #width input':    (event) -> Session.set 'width',    parseInt(event.target.value)
     'change #height input':   (event) -> Session.set 'height',   parseInt(event.target.value)
-    'change #diagonal input': (event) -> Session.set 'diagonal', parseInt(event.target.value)
+    'change #diagonal input': (event) -> Session.set 'diagonal', parseFloat(event.target.value)
 
 if Meteor.isServer
   Meteor.startup ->
