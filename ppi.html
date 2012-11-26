@@ -8,10 +8,16 @@
     {{> calculator}}
     <h3>Examples</h3>
     {{> list}}
-    <small>Made by <a href="http://zabiello.com/contact">hipertracker</a></small>
+    {{> made}}
   </div>
 </body>
 
+<template name="made">
+  <small>
+    Made by <a href="http://zabiello.com/contact">hipertracker</a>,     
+    Github: <a href="https://github.com/hipertracker/meteor-ppi-calculator">https://github.com/hipertracker/meteor-ppi-calculator</a>
+  </small>
+</template>
 <template name="calculator"> 
   <div id="calculator" class="form-inline">
     <input type="number" id="width" class="input-medium" placeholder="width [pixels]" value="{{width}}">
