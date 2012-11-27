@@ -5,6 +5,7 @@
 
 stylus
 coffeescript
-insecure
 bootstrap
 preserve-inputs
+accounts-password
+accounts-ui
